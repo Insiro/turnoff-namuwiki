@@ -281,7 +281,7 @@ browser.tabs.onUpdated.addListener(async (tabId, info, tab) => {
 
                 console.log("BAN HAMMER HAS SPOKEN!");
                 await browser.tabs.update(tabId, {
-                    url: browser.extension.getURL(`interface/banned/index.html?banned_url=${url}`),
+                    url: browser.runtime.getURL(`interface/banned/index.html?banned_url=${url}`),
                 });
                 
                 if (isArticle) {

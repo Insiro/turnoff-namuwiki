@@ -10,7 +10,7 @@ function showVersion() {
 
   document.getElementById('extension_version').innerHTML = versionText;
   document.getElementById('extension_version').addEventListener("click", (e) => {
-    fetch(browser.extension.getURL('production_ver.txt')).then(
+    fetch(browser.runtime.getURL('production_ver.txt')).then(
       (data) => {
         if (data.status === 200) {
           data.text().then((text) => {
@@ -20,7 +20,7 @@ function showVersion() {
           });
         }
       }).catch(() => {
-        fetch(browser.extension.getURL('ci_build_ver.txt')).then(
+        fetch(browser.runtime.getURL('ci_build_ver.txt')).then(
           (data) => {
             if (data.status === 200) {
               data.text().then((text) => {
