@@ -416,7 +416,7 @@ function triggerFilter(url: string) {
  *
  * FUCK YOU, umanle corporation.
  */
-
+/** disabled for manifestv3
 browser.webRequest.onBeforeRequest.addListener(
     (details) => {
         if (configCache.adblock.namuwiki) {
@@ -490,7 +490,7 @@ browser.webRequest.onBeforeRequest.addListener(
     },
     [ "blocking" ]
 )
-
+**/
 /**
  * This is namulive detection: will affect at 0.7.0
  *
@@ -499,6 +499,7 @@ browser.webRequest.onBeforeRequest.addListener(
  * 
  * + 나무뉴스 추가
  */
+/** disable for manivest v3
 browser.webRequest.onBeforeRequest.addListener(
     (details) => {
         if (configCache.blocked.group['namulive'] || configCache.blocked.site['namulive']) {
@@ -519,3 +520,4 @@ browser.webRequest.onBeforeRequest.addListener(
     [ "blocking" ]
 );
 
+**/
